@@ -1,0 +1,453 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-15 21:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\app_ecommerce_store\apps.py:7
+msgid "ecommerce_store"
+msgstr ""
+
+#: .\app_ecommerce_store\forms.py:23
+msgid "example: 1990-10-10"
+msgstr "пример: 1990-10-10"
+
+#: .\app_ecommerce_store\forms.py:25
+msgid "example: +0000000000"
+msgstr "пример: +0000000000"
+
+#: .\app_ecommerce_store\forms.py:56
+msgid "Please enter positive value"
+msgstr "Пожалуйста, введите положительное значение"
+
+#: .\app_ecommerce_store\models.py:12
+msgid "user"
+msgstr "пользователь"
+
+#: .\app_ecommerce_store\models.py:13
+msgid "birth date"
+msgstr "дата рождения"
+
+#: .\app_ecommerce_store\models.py:14
+msgid "city"
+msgstr "город"
+
+#: .\app_ecommerce_store\models.py:15
+msgid "email"
+msgstr "email"
+
+#: .\app_ecommerce_store\models.py:18
+msgid "telephone"
+msgstr "телефон"
+
+#: .\app_ecommerce_store\models.py:20
+msgid "Deposit"
+msgstr "Баланс"
+
+#: .\app_ecommerce_store\models.py:23
+msgid "profiles"
+msgstr "профили"
+
+#: .\app_ecommerce_store\models.py:24
+msgid "profile"
+msgstr "профиль"
+
+#: .\app_ecommerce_store\models.py:34 .\app_ecommerce_store\models.py:60
+msgid "Category name"
+msgstr "Название категории"
+
+#: .\app_ecommerce_store\models.py:39
+msgid "categories"
+msgstr "категории"
+
+#: .\app_ecommerce_store\models.py:40
+msgid "category"
+msgstr "категория"
+
+#: .\app_ecommerce_store\models.py:53
+msgid "Product name"
+msgstr "Название товара"
+
+#: .\app_ecommerce_store\models.py:54
+msgid "Product code"
+msgstr "Код товара"
+
+#: .\app_ecommerce_store\models.py:55
+msgid "Slug"
+msgstr ""
+
+#: .\app_ecommerce_store\models.py:57
+msgid "Product seller"
+msgstr "Продавец"
+
+#: .\app_ecommerce_store\models.py:58
+msgid "Product price in $"
+msgstr "Цена товара в $"
+
+#: .\app_ecommerce_store\models.py:61
+msgid "Product description"
+msgstr "Описание товара"
+
+#: .\app_ecommerce_store\models.py:65
+msgid "Product creation date"
+msgstr "Дата создания товара"
+
+#: .\app_ecommerce_store\models.py:66
+msgid "Updated"
+msgstr "Обновлено"
+
+#: .\app_ecommerce_store\models.py:73
+msgid "products"
+msgstr "товары"
+
+#: .\app_ecommerce_store\models.py:74
+msgid "product"
+msgstr "товар"
+
+#: .\app_ecommerce_store\models.py:87
+msgid "Promotion name"
+msgstr "Название акции"
+
+#: .\app_ecommerce_store\models.py:88
+msgid "Promotion description"
+msgstr "Описание акции"
+
+#: .\app_ecommerce_store\models.py:89
+msgid "Promotion creation date"
+msgstr "Дата создания акции"
+
+#: .\app_ecommerce_store\models.py:95
+msgid "promotions"
+msgstr "акции"
+
+#: .\app_ecommerce_store\models.py:96
+msgid "promotion"
+msgstr "акция"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:7
+#: .\app_ecommerce_store\templates\ecommerce_store\balance_refill.html:6
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:15
+msgid "Your account"
+msgstr "Ваш аккаунт"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:18
+msgid "User name"
+msgstr "Имя пользователя"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:19
+msgid "First name"
+msgstr "Имя"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:20
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:22
+msgid "Account balance"
+msgstr "Баланс"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:27
+msgid "Date of birth"
+msgstr "Дата рождения"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:28
+msgid "City"
+msgstr "Город"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:29
+msgid "Telephone"
+msgstr "Телефон"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:35
+#: .\app_ecommerce_store\templates\ecommerce_store\balance_refill.html:16
+msgid "Refill balance"
+msgstr "Пополнить баланс"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:38
+#: .\app_ecommerce_store\templates\ecommerce_store\edit_account.html:6
+msgid "Edit account"
+msgstr "Редактировать профиль"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:41
+msgid "Back to shopping"
+msgstr "Вернуться к покупкам"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:49
+msgid "Your orders"
+msgstr "Ваши заказы"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:56
+msgid "Order number"
+msgstr "Номер заказа"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:63
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:39
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:86
+#: .\app_ecommerce_store\templates\ecommerce_store\product_list.html:14
+msgid "Products"
+msgstr "Товары"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:64
+#: .\cart\templates\cart\cart_detail.html:20
+msgid "Unit price"
+msgstr "Цена за единицу товара"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:65
+#: .\cart\templates\cart\cart_detail.html:18
+msgid "Quantity"
+msgstr "Количество"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:66
+msgid "Total price"
+msgstr "Итоговая цена"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:113
+#: .\cart\templates\cart\cart_detail.html:52
+msgid "Total"
+msgstr "Итого"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:125
+msgid "No orders found"
+msgstr "Заказы отсутствуют"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:133
+msgid "Promotions"
+msgstr "Акции"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:150
+msgid "No promotions yet"
+msgstr "Акции отсутствуют"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:157
+msgid "You may like these"
+msgstr "Вам возможно понравятся"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:171
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:103
+#: .\app_ecommerce_store\templates\ecommerce_store\product_list.html:38
+msgid "Details"
+msgstr "Подробнее"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\account.html:180
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:115
+msgid "No products yet"
+msgstr "Продукты отсутствуют"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\base.html:39
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\base.html:43
+msgid "Your cart"
+msgstr "Ваша корзина"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\base.html:49
+msgid "Your cart is empty"
+msgstr "Ваша корзина пуста"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\base.html:55
+#: .\app_ecommerce_store\templates\ecommerce_store\logout.html:2
+#: .\app_ecommerce_store\templates\ecommerce_store\logout.html:10
+msgid "Logout"
+msgstr "Выход из учетной записи"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\base.html:60
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:28
+#: .\app_ecommerce_store\templates\ecommerce_store\login.html:5
+#: .\app_ecommerce_store\templates\ecommerce_store\login.html:15
+msgid "Login"
+msgstr "Логин"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\base.html:63
+#: .\app_ecommerce_store\templates\ecommerce_store\register.html:6
+#: .\app_ecommerce_store\templates\ecommerce_store\register.html:13
+msgid "Registration"
+msgstr "Регистрация"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\category_list.html:6
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:198
+msgid "All categories"
+msgstr "Все категории"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\category_list.html:25
+msgid "No categories:("
+msgstr "Категории отсутствуют"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\edit_account.html:17
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:24
+msgid "My account"
+msgstr "Мой аккаунт"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:34
+msgid "Special offers"
+msgstr "Спец предложения"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:44
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:124
+msgid "Categories"
+msgstr "Категории"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:49
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:210
+msgid "About us"
+msgstr "О нас"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:54
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:219
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:111
+msgid "Show all products"
+msgstr "Показать все товары"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:134
+msgid "Appliances"
+msgstr "Бытовая техника"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:137
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:152
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:165
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:178
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:191
+msgid "More products"
+msgstr "Посмотреть все товары"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:149
+msgid "Sports equipment"
+msgstr "Спорт товары"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:162
+msgid "Smartphones"
+msgstr "Смартфоны"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:175
+msgid "Laptops"
+msgstr "Ноутбуки"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:237
+msgid "© 2012-2022 «Shop Off Top» LLC"
+msgstr ""
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:238
+msgid "1583 Middle Rd, New York(NY), 000000"
+msgstr ""
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:239
+msgid ""
+"The information presented on the site is for reference only and is not a "
+"public offer."
+msgstr ""
+
+#: .\app_ecommerce_store\templates\ecommerce_store\home.html:240
+msgid "Terms of service"
+msgstr "Условия"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\login.html:11
+msgid "Login page"
+msgstr "Логин"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\logout.html:11
+msgid "You have successfully logged out!"
+msgstr "Вы успешно вышли из учетной записи!"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\product_detail.html:28
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\product_detail.html:39
+msgid "Category"
+msgstr "Категория"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\product_list.html:6
+msgid "All products"
+msgstr "Все товары"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\product_list.html:18
+#: .\app_ecommerce_store\templates\ecommerce_store\product_list.html:19
+msgid "Search"
+msgstr "Поиск"
+
+#: .\app_ecommerce_store\templates\ecommerce_store\register.html:17
+msgid "Register"
+msgstr "Регистрация"
+
+#: .\cart\templates\cart\cart_detail.html:5
+msgid "Shopping cart"
+msgstr "Корзина"
+
+#: .\cart\templates\cart\cart_detail.html:12
+msgid "Your shopping cart"
+msgstr "Ваша корзина"
+
+#: .\cart\templates\cart\cart_detail.html:16
+msgid "Image"
+msgstr "Фото"
+
+#: .\cart\templates\cart\cart_detail.html:17
+msgid "Product"
+msgstr "Товар"
+
+#: .\cart\templates\cart\cart_detail.html:19
+#: .\cart\templates\cart\cart_detail.html:44
+msgid "Remove"
+msgstr "Удалить"
+
+#: .\cart\templates\cart\cart_detail.html:21
+msgid "Price"
+msgstr "Цена"
+
+#: .\cart\templates\cart\cart_detail.html:59
+msgid "Continue shopping"
+msgstr "Вернуться к покупкам"
+
+#: .\cart\templates\cart\cart_detail.html:60
+#: .\orders\templates\orders\create_order.html:5
+msgid "Checkout"
+msgstr "Чекаут"
+
+#: .\cart\templates\cart\cart_detail.html:61
+msgid "Home"
+msgstr "На главную"
+
+#: .\orders\models.py:7
+msgid "Customer"
+msgstr "Заказчик"
+
+#: .\orders\templates\orders\create_order.html:13
+msgid "Your order"
+msgstr "Ваш заказ"
+
+#: .\orders\templates\orders\created.html:5
+msgid "Successfully!"
+msgstr "Успешно!"
+
+#: .\orders\templates\orders\created.html:11
+msgid "Your order is Successfully created!"
+msgstr "Ваш заказ успешно создан!"
+
+#: .\orders\templates\orders\created.html:12
+msgid "Order number:"
+msgstr "Номер заказа"

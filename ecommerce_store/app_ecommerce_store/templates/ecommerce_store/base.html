@@ -1,0 +1,75 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            Some page
+        {% endblock %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body>
+
+    <div class="container lang_form flex">
+        {% block lang_form %}
+            <div style="flex: 1">
+                <form class="center_lang_form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    <select class="center_lang_form_select" name="language" >
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                {{ language.name_local }} ({{ language.code }})
+                            </option>
+                        {% endfor %}
+                    </select>
+                    <input class="center_lang_form_input" type="submit" value="OK">
+                </form>
+            </div>
+
+            <div class="flex">
+                {% if request.user.is_authenticated %}
+                    <p class="welcome_text_p">{% trans "Welcome" %}, {{ request.user.first_name }}!</p>
+                    <div>
+                        {% with total_items=cart|length %}
+                            {% if cart|length > 0 %}
+                                {% trans "Your cart" %}:
+                                <a class="shopping_cart" href="{% url 'cart:cart_detail' %}">
+                                    {{ total_items }} item{{ total_items|pluralize }},
+                                    ${{ cart.get_total_price }}
+                                </a>
+                            {% else %}
+                                {% trans "Your cart is empty" %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+
+                    <a class="logout_btn" href="{% url 'app_ecommerce_store:logout' %}">
+                        {% trans "Logout" %}
+                    </a>
+                {% else %}
+                    <div>
+                        <a class="login_btn" href="{% url 'app_ecommerce_store:login' %}">
+                            {% trans "Login" %}
+                        </a>
+                        <a class="register_btn" href="{% url 'app_ecommerce_store:register' %}">
+                            {% trans "Registration" %}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock %}
+    </div>
+    {% block content %}
+        Some content
+    {% endblock %}
+
+</body>
+</html>

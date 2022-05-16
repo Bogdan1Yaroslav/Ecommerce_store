@@ -1,0 +1,47 @@
+{% extends 'ecommerce_store/base.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    {{ product.product_name }}
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <div class="product_card_content">
+            <h1 class="product_card_content_h1">
+                {{ product.product_name }}
+            </h1>
+            <div class="img_and_price flex">
+
+                <img class="product_card_content_img" src="{{ product.product_images.url }}" alt="">
+
+
+                <div class="add_to_cart">
+                    <p>${{ product.product_price }}</p>
+                    <form class="" action="{% url 'cart:cart_add' product.id %}" method="post">
+                        {{ cart_product_form }}
+                        {% csrf_token %}
+
+
+                        <input type="submit" value="{% trans 'Add to cart' %}">
+                    </form>
+
+
+                </div>
+
+            </div>
+
+            <div class="product_description">
+                <h2 class="product_description_h2">Product description</h2>
+                <p class="product_description_p">{{ product.product_description }}</p>
+                <p>{% trans "Category" %}: {{ product.product_category }}</p>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'ecommerce_store/base.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    {% trans "All products" %}
+{% endblock %}
+
+
+{% block content %}
+    <body>
+        <div class="container">
+            <div class="post_div flex">
+                <h2 class="products_h2 section_title">{% trans "Products" %}</h2>
+
+                <div class="div_search">
+                    <form class="search_form">
+                        <input name="search_request" type="search" placeholder="{% trans 'Search' %}" aria-label="Search">
+                        <button type="submit">{% trans "Search" %}</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="product_cards_list">
+                {% if products %}
+                <ul class="products-list list-reset flex">
+                    {% for product in products %}
+                  <li class="product-item">
+                      <div class="product_content img-align">
+                          <img class="product-item-img" src="{{ product.product_images.url }}" alt="">
+                          <h3 class="product_title_h3">
+                            {{ product.product_name }}
+                          </h3>
+                          <p class="product_price">
+                              ${{ product.product_price }}
+                          </p>
+                          <a href="{{ product.get_absolute_url }}" class="more_products_by_category_btn">
+                            {% trans "Details" %}
+                          </a>
+                      </div>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                    <h1>Нет товаров</h1>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+{% endblock %}

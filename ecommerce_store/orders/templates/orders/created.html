@@ -1,0 +1,18 @@
+{% extends 'ecommerce_store/base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Successfully!" %}
+{% endblock %}
+
+{% block content %}
+    <body>
+        <div class="container">
+            <p>{% trans "Your order is Successfully created!" %}</p>
+            <p>{% trans "Order number:" %} {{ order.id }}.</p>
+            <a href="{% url 'app_ecommerce_store:home' %}">
+                Back to shopping
+            </a>
+        </div>
+    </body>
+{% endblock %}

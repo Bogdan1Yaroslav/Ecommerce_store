@@ -1,0 +1,187 @@
+{% extends 'ecommerce_store/base.html' %}
+{% load i18n %}
+
+{% load cache %}
+
+{% block title %}
+    {% trans "Profile" %}
+{% endblock %}
+
+
+{% block content %}
+    <body>
+        <div class="container">
+            <section class="account_data_section">
+                <h1 class="section_h1">{% trans "Your account" %}</h1>
+                <div class="account_data flex">
+                    <div class="first_info">
+                        <p>{% trans "User name" %}: {{ request.user.username }}</p>
+                        <p>{% trans "First name" %}: {{ request.user.first_name }}</p>
+                        <p>{% trans "Last name" %}: {{ request.user.last_name }}</p>
+                        <p class="account_balance">
+                            {% trans "Account balance" %}: ${{ request.user.profile.deposit }}
+                        </p>
+                    </div>
+
+                    <div class="second_info">
+                        <p>{% trans "Date of birth" %}: {{ request.user.profile.date_of_birth }}</p>
+                        <p>{% trans "City" %}: {{ request.user.profile.city }}</p>
+                        <p>{% trans "Telephone" %}: {{ request.user.profile.phone_number }}</p>
+                        <p>Email: {{ request.user.profile.email }}</p>
+                    </div>
+                </div>
+                <div class="account_data_btns">
+                    <a class="deposit_refill_btn" href="{% url 'app_ecommerce_store:balance_refill' %}">
+                        {% trans "Refill balance" %}
+                    </a>
+                    <a class="edit_account_btn" href="{% url 'app_ecommerce_store:edit_account' %}">
+                        {% trans "Edit account" %}
+                    </a>
+                    <a class="edit_account_btn" href="{% url 'app_ecommerce_store:home' %}">
+                        {% trans "Back to shopping" %}
+                    </a>
+                </div>
+            </section>
+
+            {% cache 500 section %}
+            <section class="customer_orders_section">
+                <div>
+                    <h1 class="section_h1">{% trans "Your orders" %}</h1>
+                    {% if customer_orders %}
+                        <ul class="orders-list list-reset ">
+                                {% for order in customer_orders %}
+                                  <li class="order-item">
+                                      <div class="promotion_content">
+                                        <h3 class="order_title_h3">
+                                            {% trans "Order number" %}: {{ order.id }}
+                                        </h3>
+                                        <p>Order date: {{ order.created }}</p>
+
+                                        <table class="orders_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>{% trans "Products" %}</th>
+                                                    <th>{% trans "Unit price" %}</th>
+                                                    <th>{% trans "Quantity" %}</th>
+                                                    <th>{% trans "Total price" %}</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <ol class="items_list">
+                                                            {% for item in order.items.all %}
+                                                                <li class="items">
+                                                                    {{ item.product }}
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ol>
+                                                    </td>
+
+                                                    <td>
+                                                        <ul class="list-reset">
+                                                            {% for item in order.items.all %}
+                                                                <li class="items">
+                                                                    ${{ item.price }}
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </td>
+
+                                                    <td>
+                                                        <ul class="list-reset">
+                                                            {% for item in order.items.all %}
+                                                                <li class="items">
+                                                                    {{ item.quantity }}
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </td>
+
+                                                    <td>
+                                                        <ul class="list-reset">
+                                                            {% for item in order.items.all %}
+                                                                <li class="items">
+                                                                    ${{ item.get_cost }}
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr class="total">
+                                                    <td class="items">{% trans "Total" %}</td>
+                                                    <td colspan="2"></td>
+                                                    <td class="items">${{ order.get_total_cost }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                      </div>
+                                  </li>
+                              {% endfor %}
+                        </ul>
+                    {% else %}
+                        <h1>{% trans "No orders found" %}</h1>
+                    {% endif %}
+                </div>
+            </section>
+            {% endcache %}
+
+            <section class="promotions_section">
+                <div>
+                    <h1 class="section_h1">{% trans "Promotions" %}</h1>
+                    {% if promotions %}
+                        <ul class="promotions-list list-reset flex">
+                                {% for promotion in promotions %}
+                                  <li class="promotion-item">
+                                      <div class="promotion_content img-align">
+                                          <h3 class="product_title_h3">
+                                            {{ promotion.promotion_name }}
+                                          </h3>
+                                          <p class="product_price">
+                                              {{ promotion.promotion_description }}
+                                          </p>
+                                      </div>
+                                  </li>
+                              {% endfor %}
+                        </ul>
+                    {% else %}
+                        <h1>{% trans "No promotions yet" %}</h1>
+                    {% endif %}
+                </div>
+            </section>
+
+            <section class="special_offers_section">
+                <div class="product_cards_list">
+                    <h1 class="section_h1">{% trans "You may like these" %}</h1>
+                    {% if special_offers %}
+                    <ul class="products-list list-reset flex">
+                        {% for offer in special_offers %}
+                      <li class="product-item">
+                          <div class="product_content img-align">
+                              <img class="product-item-img" src="{{ offer.product_images.url }}" alt="">
+                              <h3 class="product_title_h3">
+                                {{ offer.product_name }}
+                              </h3>
+                              <p class="product_price">
+                                  ${{ offer.product_price }}
+                              </p>
+                              <a href="{{ offer.get_absolute_url }}" class="more_products_by_category_btn" target="_blank">
+                                {% trans "Details" %}
+                              </a>
+                          </div>
+                      </li>
+
+                      {% endfor %}
+                    </ul>
+
+                    {% else %}
+                        <h1>{% trans "No products yet" %}</h1>
+                    {% endif %}
+                </div>
+            </section>
+
+        </div>
+    </body>
+{% endblock %}

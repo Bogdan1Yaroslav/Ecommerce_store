@@ -1,0 +1,30 @@
+{% extends 'ecommerce_store/base.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    {% trans "All categories" %}
+{% endblock %}
+
+
+{% block content %}
+    <body>
+        <div class="container">
+            {% if categories %}
+                 <ul class="categories_list list-reset">
+                    {% for category in categories %}
+                        <li class="news_list_item">
+                            <a href="{% url 'app_ecommerce_store:product_list_by_category' category.category_slug %}">
+                                {{ category.category_name }}
+                            </a>
+
+                        </li>
+                    {% endfor %}
+                 </ul>
+            {% else %}
+                <p>{% trans "No categories:(" %}</p>
+            {% endif %}
+        </div>
+
+    </body>
+{% endblock %}
