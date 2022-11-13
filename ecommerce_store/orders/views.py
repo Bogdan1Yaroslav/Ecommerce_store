@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from cart.cart import Cart
 from .models import OrderItem
 from .forms import OrderCreateForm
@@ -22,8 +23,10 @@ def create_order(request):
 
             cart.clear()
             # order_created.delay(order.id)
-            multiply()
-            return render(request, 'orders/created.html', {'order': order})
+            # multiply()
+            request.session['order_id'] = order.id
+            return redirect(reverse('payment:process'))
+            # return render(request, 'orders/created.html', {'order': order})
 
     else:
         form = OrderCreateForm()

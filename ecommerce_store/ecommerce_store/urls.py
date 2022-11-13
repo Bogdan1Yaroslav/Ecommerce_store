@@ -25,4 +25,5 @@ urlpatterns = [
     path('cart/', include("cart.urls", namespace='cart')),
     path('', include("app_ecommerce_store.urls", namespace='app_ecommerce_store')),
     path('i18n', include('django.conf.urls.i18n')),
+    path('payment/', include("payment.urls", namespace='payment')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
